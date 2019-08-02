@@ -1,0 +1,31 @@
+.choice
+{
+    height: 200px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-big
+{
+    height: 100%;
+    width: 100%;
+    font-size: xx-large !important;
+    border-radius: 10px !important;
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-big:hover
+{
+    background-color: #990033cc;
+    /*color: #990033;*/
+}
+
+@media only screen and (max-width: 767px)
+{
+    .choice
+    {
+        height: 100px;
+    }
+}

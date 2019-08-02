@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mosaic - McMaster</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" async src="main.js"></script>
+</head>
+<body>
+    <script src="home.js"></script>
+    <div class="header">
+        <img class="logo-small" src="logo.png">
+         <div class="float-right icon-home" onclick="location.href = 'index.html'">
+             <i class="fa fa-home"></i>
+         </div>
+    </div>
+    <div class="blur-background">
+        <div class="student-name-number">
+            <span class="float-left ml-3">Tom's Student Center</span>
+            <span class="float-right mr-3">400000001</span>
+
+        </div>
+        <div class="container-fluid container-custom1">
+            <div class="space-30"></div>
+            <!-- 첫번째 줄-->
+            <div class="row">
+              <!-- 첫번쨰 왼쪽-->
+                <div class="col-4">
+                  <!-- 줄 띄우고 -->
+                  <div class="space-5"></div>
+                  <!-- 왼쪽 위 첫번째 버튼 -->
+                  <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <p class="color-maroon">Course Enrollment</p>
+                           </span>
+                      </div>
+                  </div>
+                  <!-- 줄 띄우고 -->
+                  <div class="space-5"></div><div class="space-5"></div>
+                  <!-- 왼쪽위 두번쨰 버튼 -->
+                  <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <button class="btn btn-dark btn-xl ml-4" id="search_button" onclick="search_button_click();">
+                                Search
+                            </button>
+                            <button class="btn btn-dark btn-xl ml-4" id="enroll_button" onclick="enroll_button_click();">
+                                Enroll
+                            </button>
+                           </span>
+                      </div>
+                  </div>
+                </div>
+                <!-- 오른쪽 위에 -->
+                <div class="col-8 hideIt" id="subject_Coursecode" >
+                  <div class="space-5"></div>
+                  <form class="form-block">
+                    <div class="row">
+                      <div class="col-6 col-md-5">
+                        <p class="font-big">
+                          Subject :
+                        </p>
+                      </div>
+                      <div class="col-6 col-md-5">
+                        <input type="text" class="form-control" id="inputsubject" placeholder="Subject">
+                      </div>
+                      <div class="col-6 col-md-2">
+                        <i class="fa fa-search color-maroon" id="subject_search" onclick="subject_search_click();"></i>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-5">
+                        <p class="font-big">
+                          Course Code :
+                        </p>
+                      </div>
+                      <div class="col-6 col-md-5">
+                        <input type="text" class="form-control" id="inputcoursecode" placeholder="Course Code">
+                      </div>
+                      <div class="col-6 col-md-2">
+                        <i class="fa fa-search color-maroon" id="coursecode_search" onclick="coursecode_search_click();"></i>
+                      </div>
+                    </div>
+                    <div class="space-5"></div>
+                    <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <button class="btn btn-primary btn-lg float-right mr-15 background-maroon" >
+                                Search
+                            </button>
+                           </span>
+                      </div>
+                  </div>
+                  </form>
+                </div>
+            </div>
+            <div class="space-5"></div>
+            <div class="space-5"></div>
+            <!-- Bottom -->
+            <div class="row">
+              <!-- Bottom left-->
+                <div class="col-4 hideIt" id="search_By">
+                  <div class="show-border">
+                    <div class="space-5"></div>
+                    <div class="space-5"></div>
+                    <p class="text-search-by ml-3">Search by :</p>
+                    <div class="space-5"></div>
+                    <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <button class="btn btn-outline-dark btn-lg ml-3" >
+                                Course Number
+                            </button>
+                           </span>
+                      </div>
+                  </div>
+                  <div class="space-5"></div>
+                  <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <button class="btn btn-outline-dark btn-lg ml-3">
+                                Course Code
+                            </button>
+                           </span>
+                      </div>
+                  </div>
+                  <div class="space-5"></div>
+                  <div class="row">
+                      <div class="col">
+                          <span class="choice text-center">
+                            <button class="btn btn-outline-dark btn-lg ml-3">
+                                My Requirements
+                            </button>
+                           </span>
+                      </div>
+                  </div>
+                  <div class="space-5"></div><div class="space-5"></div>
+                  </div>
+                </div>
+                <div class="col-8">
+                  <img src="white.png" style="width: 100%;" id="courseInfo">
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!--------
+<table style="width: :100%">
+                      <tr>
+                        <!-- first five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                    </table>
+                    <div>
+                      <div class="space-30"></div>
+                      <!-- here starts the table -->
+                    <table style="width:100%">
+                      <tr>
+                        <!-- first five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>2,1,1</th>
+                        <th>2,2,1</th> 
+                        <th>2,3,1</th>
+                        <th>2,4,1</th> 
+                        <th>2,5,1</th>
+                        <th>2,1,2</th>
+                        <th>2,2,2</th> 
+                        <th>2,3,2</th>
+                        <th>2,4,2</th> 
+                        <th>2,5,2</th>
+                        <th>2,1,3</th>
+                        <th>2,2,3</th> 
+                        <th>2,3,3</th>
+                        <th>2,4,3</th> 
+                        <th>2,5,3</th>
+                        <th>2,1,4</th>
+                        <th>2,2,4</th> 
+                        <th>2,3,4</th>
+                        <th>2,4,4</th> 
+                        <th>2,5,4</th>
+                        <th>2,1,5</th>
+                        <th>2,2,5</th> 
+                        <th>2,3,5</th>
+                        <th>2,4,5</th> 
+                        <th>2,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>3,1,1</th>
+                        <th>3,2,1</th> 
+                        <th>3,3,1</th>
+                        <th>3,4,1</th> 
+                        <th>3,5,1</th>
+                        <th>3,1,2</th>
+                        <th>3,2,2</th> 
+                        <th>3,3,2</th>
+                        <th>3,4,2</th> 
+                        <th>3,5,2</th>
+                        <th>3,1,3</th>
+                        <th>3,2,3</th> 
+                        <th>3,3,3</th>
+                        <th>3,4,3</th> 
+                        <th>3,5,3</th>
+                        <th>3,1,4</th>
+                        <th>3,2,4</th> 
+                        <th>3,3,4</th>
+                        <th>3,4,4</th> 
+                        <th>3,5,4</th>
+                        <th>3,1,5</th>
+                        <th>3,2,5</th> 
+                        <th>3,3,5</th>
+                        <th>3,4,5</th> 
+                        <th>3,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>4,1,1</th>
+                        <th>4,2,1</th> 
+                        <th>4,3,1</th>
+                        <th>4,4,1</th> 
+                        <th>4,5,1</th>
+                        <th>4,1,2</th>
+                        <th>4,2,2</th> 
+                        <th>4,3,2</th>
+                        <th>4,4,2</th> 
+                        <th>4,5,2</th>
+                        <th>4,1,3</th>
+                        <th>4,2,3</th> 
+                        <th>4,3,3</th>
+                        <th>4,4,3</th> 
+                        <th>4,5,3</th>
+                        <th>4,1,4</th>
+                        <th>4,2,4</th> 
+                        <th>4,3,4</th>
+                        <th>4,4,4</th> 
+                        <th>4,5,4</th>
+                        <th>4,1,5</th>
+                        <th>4,2,5</th> 
+                        <th>4,3,5</th>
+                        <th>4,4,5</th> 
+                        <th>4,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>5,1,1</th>
+                        <th>5,2,1</th> 
+                        <th>5,3,1</th>
+                        <th>5,4,1</th> 
+                        <th>5,5,1</th>
+                        <th>5,1,2</th>
+                        <th>5,2,2</th> 
+                        <th>5,3,2</th>
+                        <th>5,4,2</th> 
+                        <th>5,5,2</th>
+                        <th>5,1,3</th>
+                        <th>5,2,3</th> 
+                        <th>5,3,3</th>
+                        <th>5,4,3</th> 
+                        <th>5,5,3</th>
+                        <th>5,1,4</th>
+                        <th>5,2,4</th> 
+                        <th>5,3,4</th>
+                        <th>5,4,4</th> 
+                        <th>5,5,4</th>
+                        <th>5,1,5</th>
+                        <th>5,2,5</th> 
+                        <th>5,3,5</th>
+                        <th>5,4,5</th> 
+                        <th>5,5,5</th>
+                      </tr>
+                      <!-- second five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>2,1,1</th>
+                        <th>2,2,1</th> 
+                        <th>2,3,1</th>
+                        <th>2,4,1</th> 
+                        <th>2,5,1</th>
+                        <th>2,1,2</th>
+                        <th>2,2,2</th> 
+                        <th>2,3,2</th>
+                        <th>2,4,2</th> 
+                        <th>2,5,2</th>
+                        <th>2,1,3</th>
+                        <th>2,2,3</th> 
+                        <th>2,3,3</th>
+                        <th>2,4,3</th> 
+                        <th>2,5,3</th>
+                        <th>2,1,4</th>
+                        <th>2,2,4</th> 
+                        <th>2,3,4</th>
+                        <th>2,4,4</th> 
+                        <th>2,5,4</th>
+                        <th>2,1,5</th>
+                        <th>2,2,5</th> 
+                        <th>2,3,5</th>
+                        <th>2,4,5</th> 
+                        <th>2,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>3,1,1</th>
+                        <th>3,2,1</th> 
+                        <th>3,3,1</th>
+                        <th>3,4,1</th> 
+                        <th>3,5,1</th>
+                        <th>3,1,2</th>
+                        <th>3,2,2</th> 
+                        <th>3,3,2</th>
+                        <th>3,4,2</th> 
+                        <th>3,5,2</th>
+                        <th>3,1,3</th>
+                        <th>3,2,3</th> 
+                        <th>3,3,3</th>
+                        <th>3,4,3</th> 
+                        <th>3,5,3</th>
+                        <th>3,1,4</th>
+                        <th>3,2,4</th> 
+                        <th>3,3,4</th>
+                        <th>3,4,4</th> 
+                        <th>3,5,4</th>
+                        <th>3,1,5</th>
+                        <th>3,2,5</th> 
+                        <th>3,3,5</th>
+                        <th>3,4,5</th> 
+                        <th>3,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>4,1,1</th>
+                        <th>4,2,1</th> 
+                        <th>4,3,1</th>
+                        <th>4,4,1</th> 
+                        <th>4,5,1</th>
+                        <th>4,1,2</th>
+                        <th>4,2,2</th> 
+                        <th>4,3,2</th>
+                        <th>4,4,2</th> 
+                        <th>4,5,2</th>
+                        <th>4,1,3</th>
+                        <th>4,2,3</th> 
+                        <th>4,3,3</th>
+                        <th>4,4,3</th> 
+                        <th>4,5,3</th>
+                        <th>4,1,4</th>
+                        <th>4,2,4</th> 
+                        <th>4,3,4</th>
+                        <th>4,4,4</th> 
+                        <th>4,5,4</th>
+                        <th>4,1,5</th>
+                        <th>4,2,5</th> 
+                        <th>4,3,5</th>
+                        <th>4,4,5</th> 
+                        <th>4,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>5,1,1</th>
+                        <th>5,2,1</th> 
+                        <th>5,3,1</th>
+                        <th>5,4,1</th> 
+                        <th>5,5,1</th>
+                        <th>5,1,2</th>
+                        <th>5,2,2</th> 
+                        <th>5,3,2</th>
+                        <th>5,4,2</th> 
+                        <th>5,5,2</th>
+                        <th>5,1,3</th>
+                        <th>5,2,3</th> 
+                        <th>5,3,3</th>
+                        <th>5,4,3</th> 
+                        <th>5,5,3</th>
+                        <th>5,1,4</th>
+                        <th>5,2,4</th> 
+                        <th>5,3,4</th>
+                        <th>5,4,4</th> 
+                        <th>5,5,4</th>
+                        <th>5,1,5</th>
+                        <th>5,2,5</th> 
+                        <th>5,3,5</th>
+                        <th>5,4,5</th> 
+                        <th>5,5,5</th>
+                      </tr>
+                      <!-- third five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>2,1,1</th>
+                        <th>2,2,1</th> 
+                        <th>2,3,1</th>
+                        <th>2,4,1</th> 
+                        <th>2,5,1</th>
+                        <th>2,1,2</th>
+                        <th>2,2,2</th> 
+                        <th>2,3,2</th>
+                        <th>2,4,2</th> 
+                        <th>2,5,2</th>
+                        <th>2,1,3</th>
+                        <th>2,2,3</th> 
+                        <th>2,3,3</th>
+                        <th>2,4,3</th> 
+                        <th>2,5,3</th>
+                        <th>2,1,4</th>
+                        <th>2,2,4</th> 
+                        <th>2,3,4</th>
+                        <th>2,4,4</th> 
+                        <th>2,5,4</th>
+                        <th>2,1,5</th>
+                        <th>2,2,5</th> 
+                        <th>2,3,5</th>
+                        <th>2,4,5</th> 
+                        <th>2,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>3,1,1</th>
+                        <th>3,2,1</th> 
+                        <th>3,3,1</th>
+                        <th>3,4,1</th> 
+                        <th>3,5,1</th>
+                        <th>3,1,2</th>
+                        <th>3,2,2</th> 
+                        <th>3,3,2</th>
+                        <th>3,4,2</th> 
+                        <th>3,5,2</th>
+                        <th>3,1,3</th>
+                        <th>3,2,3</th> 
+                        <th>3,3,3</th>
+                        <th>3,4,3</th> 
+                        <th>3,5,3</th>
+                        <th>3,1,4</th>
+                        <th>3,2,4</th> 
+                        <th>3,3,4</th>
+                        <th>3,4,4</th> 
+                        <th>3,5,4</th>
+                        <th>3,1,5</th>
+                        <th>3,2,5</th> 
+                        <th>3,3,5</th>
+                        <th>3,4,5</th> 
+                        <th>3,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>4,1,1</th>
+                        <th>4,2,1</th> 
+                        <th>4,3,1</th>
+                        <th>4,4,1</th> 
+                        <th>4,5,1</th>
+                        <th>4,1,2</th>
+                        <th>4,2,2</th> 
+                        <th>4,3,2</th>
+                        <th>4,4,2</th> 
+                        <th>4,5,2</th>
+                        <th>4,1,3</th>
+                        <th>4,2,3</th> 
+                        <th>4,3,3</th>
+                        <th>4,4,3</th> 
+                        <th>4,5,3</th>
+                        <th>4,1,4</th>
+                        <th>4,2,4</th> 
+                        <th>4,3,4</th>
+                        <th>4,4,4</th> 
+                        <th>4,5,4</th>
+                        <th>4,1,5</th>
+                        <th>4,2,5</th> 
+                        <th>4,3,5</th>
+                        <th>4,4,5</th> 
+                        <th>4,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>5,1,1</th>
+                        <th>5,2,1</th> 
+                        <th>5,3,1</th>
+                        <th>5,4,1</th> 
+                        <th>5,5,1</th>
+                        <th>5,1,2</th>
+                        <th>5,2,2</th> 
+                        <th>5,3,2</th>
+                        <th>5,4,2</th> 
+                        <th>5,5,2</th>
+                        <th>5,1,3</th>
+                        <th>5,2,3</th> 
+                        <th>5,3,3</th>
+                        <th>5,4,3</th> 
+                        <th>5,5,3</th>
+                        <th>5,1,4</th>
+                        <th>5,2,4</th> 
+                        <th>5,3,4</th>
+                        <th>5,4,4</th> 
+                        <th>5,5,4</th>
+                        <th>5,1,5</th>
+                        <th>5,2,5</th> 
+                        <th>5,3,5</th>
+                        <th>5,4,5</th> 
+                        <th>5,5,5</th>
+                      </tr>
+                      <!-- fourth five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>2,1,1</th>
+                        <th>2,2,1</th> 
+                        <th>2,3,1</th>
+                        <th>2,4,1</th> 
+                        <th>2,5,1</th>
+                        <th>2,1,2</th>
+                        <th>2,2,2</th> 
+                        <th>2,3,2</th>
+                        <th>2,4,2</th> 
+                        <th>2,5,2</th>
+                        <th>2,1,3</th>
+                        <th>2,2,3</th> 
+                        <th>2,3,3</th>
+                        <th>2,4,3</th> 
+                        <th>2,5,3</th>
+                        <th>2,1,4</th>
+                        <th>2,2,4</th> 
+                        <th>2,3,4</th>
+                        <th>2,4,4</th> 
+                        <th>2,5,4</th>
+                        <th>2,1,5</th>
+                        <th>2,2,5</th> 
+                        <th>2,3,5</th>
+                        <th>2,4,5</th> 
+                        <th>2,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>3,1,1</th>
+                        <th>3,2,1</th> 
+                        <th>3,3,1</th>
+                        <th>3,4,1</th> 
+                        <th>3,5,1</th>
+                        <th>3,1,2</th>
+                        <th>3,2,2</th> 
+                        <th>3,3,2</th>
+                        <th>3,4,2</th> 
+                        <th>3,5,2</th>
+                        <th>3,1,3</th>
+                        <th>3,2,3</th> 
+                        <th>3,3,3</th>
+                        <th>3,4,3</th> 
+                        <th>3,5,3</th>
+                        <th>3,1,4</th>
+                        <th>3,2,4</th> 
+                        <th>3,3,4</th>
+                        <th>3,4,4</th> 
+                        <th>3,5,4</th>
+                        <th>3,1,5</th>
+                        <th>3,2,5</th> 
+                        <th>3,3,5</th>
+                        <th>3,4,5</th> 
+                        <th>3,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>4,1,1</th>
+                        <th>4,2,1</th> 
+                        <th>4,3,1</th>
+                        <th>4,4,1</th> 
+                        <th>4,5,1</th>
+                        <th>4,1,2</th>
+                        <th>4,2,2</th> 
+                        <th>4,3,2</th>
+                        <th>4,4,2</th> 
+                        <th>4,5,2</th>
+                        <th>4,1,3</th>
+                        <th>4,2,3</th> 
+                        <th>4,3,3</th>
+                        <th>4,4,3</th> 
+                        <th>4,5,3</th>
+                        <th>4,1,4</th>
+                        <th>4,2,4</th> 
+                        <th>4,3,4</th>
+                        <th>4,4,4</th> 
+                        <th>4,5,4</th>
+                        <th>4,1,5</th>
+                        <th>4,2,5</th> 
+                        <th>4,3,5</th>
+                        <th>4,4,5</th> 
+                        <th>4,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>5,1,1</th>
+                        <th>5,2,1</th> 
+                        <th>5,3,1</th>
+                        <th>5,4,1</th> 
+                        <th>5,5,1</th>
+                        <th>5,1,2</th>
+                        <th>5,2,2</th> 
+                        <th>5,3,2</th>
+                        <th>5,4,2</th> 
+                        <th>5,5,2</th>
+                        <th>5,1,3</th>
+                        <th>5,2,3</th> 
+                        <th>5,3,3</th>
+                        <th>5,4,3</th> 
+                        <th>5,5,3</th>
+                        <th>5,1,4</th>
+                        <th>5,2,4</th> 
+                        <th>5,3,4</th>
+                        <th>5,4,4</th> 
+                        <th>5,5,4</th>
+                        <th>5,1,5</th>
+                        <th>5,2,5</th> 
+                        <th>5,3,5</th>
+                        <th>5,4,5</th> 
+                        <th>5,5,5</th>
+                      </tr>
+                      <!-- fifth five row -->
+                        <th>1,1,1</th>
+                        <th>1,2,1</th> 
+                        <th>1,3,1</th>
+                        <th>1,4,1</th> 
+                        <th>1,5,1</th>
+                        <th>1,1,2</th>
+                        <th>1,2,2</th> 
+                        <th>1,3,2</th>
+                        <th>1,4,2</th> 
+                        <th>1,5,2</th>
+                        <th>1,1,3</th>
+                        <th>1,2,3</th> 
+                        <th>1,3,3</th>
+                        <th>1,4,3</th> 
+                        <th>1,5,3</th>
+                        <th>1,1,4</th>
+                        <th>1,2,4</th> 
+                        <th>1,3,4</th>
+                        <th>1,4,4</th> 
+                        <th>1,5,4</th>
+                        <th>1,1,5</th>
+                        <th>1,2,5</th> 
+                        <th>1,3,5</th>
+                        <th>1,4,5</th> 
+                        <th>1,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>2,1,1</th>
+                        <th>2,2,1</th> 
+                        <th>2,3,1</th>
+                        <th>2,4,1</th> 
+                        <th>2,5,1</th>
+                        <th>2,1,2</th>
+                        <th>2,2,2</th> 
+                        <th>2,3,2</th>
+                        <th>2,4,2</th> 
+                        <th>2,5,2</th>
+                        <th>2,1,3</th>
+                        <th>2,2,3</th> 
+                        <th>2,3,3</th>
+                        <th>2,4,3</th> 
+                        <th>2,5,3</th>
+                        <th>2,1,4</th>
+                        <th>2,2,4</th> 
+                        <th>2,3,4</th>
+                        <th>2,4,4</th> 
+                        <th>2,5,4</th>
+                        <th>2,1,5</th>
+                        <th>2,2,5</th> 
+                        <th>2,3,5</th>
+                        <th>2,4,5</th> 
+                        <th>2,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>3,1,1</th>
+                        <th>3,2,1</th> 
+                        <th>3,3,1</th>
+                        <th>3,4,1</th> 
+                        <th>3,5,1</th>
+                        <th>3,1,2</th>
+                        <th>3,2,2</th> 
+                        <th>3,3,2</th>
+                        <th>3,4,2</th> 
+                        <th>3,5,2</th>
+                        <th>3,1,3</th>
+                        <th>3,2,3</th> 
+                        <th>3,3,3</th>
+                        <th>3,4,3</th> 
+                        <th>3,5,3</th>
+                        <th>3,1,4</th>
+                        <th>3,2,4</th> 
+                        <th>3,3,4</th>
+                        <th>3,4,4</th> 
+                        <th>3,5,4</th>
+                        <th>3,1,5</th>
+                        <th>3,2,5</th> 
+                        <th>3,3,5</th>
+                        <th>3,4,5</th> 
+                        <th>3,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>4,1,1</th>
+                        <th>4,2,1</th> 
+                        <th>4,3,1</th>
+                        <th>4,4,1</th> 
+                        <th>4,5,1</th>
+                        <th>4,1,2</th>
+                        <th>4,2,2</th> 
+                        <th>4,3,2</th>
+                        <th>4,4,2</th> 
+                        <th>4,5,2</th>
+                        <th>4,1,3</th>
+                        <th>4,2,3</th> 
+                        <th>4,3,3</th>
+                        <th>4,4,3</th> 
+                        <th>4,5,3</th>
+                        <th>4,1,4</th>
+                        <th>4,2,4</th> 
+                        <th>4,3,4</th>
+                        <th>4,4,4</th> 
+                        <th>4,5,4</th>
+                        <th>4,1,5</th>
+                        <th>4,2,5</th> 
+                        <th>4,3,5</th>
+                        <th>4,4,5</th> 
+                        <th>4,5,5</th>
+                      </tr>
+                      <tr>
+                        <th>5,1,1</th>
+                        <th>5,2,1</th> 
+                        <th>5,3,1</th>
+                        <th>5,4,1</th> 
+                        <th>5,5,1</th>
+                        <th>5,1,2</th>
+                        <th>5,2,2</th> 
+                        <th>5,3,2</th>
+                        <th>5,4,2</th> 
+                        <th>5,5,2</th>
+                        <th>5,1,3</th>
+                        <th>5,2,3</th> 
+                        <th>5,3,3</th>
+                        <th>5,4,3</th> 
+                        <th>5,5,3</th>
+                        <th>5,1,4</th>
+                        <th>5,2,4</th> 
+                        <th>5,3,4</th>
+                        <th>5,4,4</th> 
+                        <th>5,5,4</th>
+                        <th>5,1,5</th>
+                        <th>5,2,5</th> 
+                        <th>5,3,5</th>
+                        <th>5,4,5</th> 
+                        <th>5,5,5</th>
+                      </tr>
+                    </table>
+    ----__>
+
+</body>
+</html>
